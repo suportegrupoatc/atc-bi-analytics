@@ -10,6 +10,7 @@ export default async function CatalogoPage() {
     .select('*')
     .eq('canal_venda', 1)
     .order('visitas_30d', { ascending: false })
+    .limit(50000)
 
   if (error) {
     return (
