@@ -230,11 +230,48 @@ Passos:
 
 ---
 
-## 9. Fora do Escopo (Fase 1)
+## 8.1 Página: Análise de Catálogo (`/catalogo`)
+
+View de origem: `vb_final_catalogo_joga_para_drive_server_ofc`
+
+**KPIs no topo (5 cards):**
+- Total de sellers mapeados
+- Sellers abaixo da tabela — contagem + % (vermelho)
+- Sellers acima da tabela — contagem + % (verde)
+- Sellers na tabela — contagem + % (amarelo)
+- Visitas médias 30d por anúncio
+
+**Tabela com colunas:**
+`id_anuncio`, `sku`, `desc_simples`, `nome_vendedor`, `reputacao`, `medalha`, `cidade`,
+`preco_desconto_final`, `preco_tabela`, `diferenca_preco`, `status_preco`, `forma_entrega`,
+`visitas_7d`, `visitas_15d`, `visitas_30d`, `visitas_60d`, `visitas_90d`, `link_anuncio`
+
+**Recursos:**
+- Badge colorido por `status_preco`: verde (abaixo), vermelho (acima), amarelo (na tabela)
+- Linha com fundo vermelho suave para sellers acima do preço
+- Mini barra de visitas proporcional ao máximo do conjunto
+- Link direto para o anúncio no ML (`↗ Ver`)
+- Filtros: status_preco, forma_entrega, medalha, SKU, marca, busca livre
+- **Exportar Excel** — botão verde no header da tabela, baixa `.xlsx` com todos os dados filtrados
+- **Exportar CSV** — botão outline secundário
+
+**Dependência:** tabela `catalogo_mapeado` no Supabase (migrada da view local)
+
+---
+
+## 9. Mockups Salvos
+
+Todos os mockups aprovados estão em `docs/mockups/`:
+- `01-login.html` — tela de login verde esmeralda glassmorphism
+- `02-dashboard-resumo.html` — dashboard principal com KPIs, gráfico e tabela
+- `03-analise-catalogo.html` — análise de catálogo com KPIs de preço e tabela completa
+
+---
+
+## 10. Fora do Escopo (Fase 1)
 
 - Integração direta com API do Mercado Livre (OAuth)
 - Canal Shopee (fase 2)
-- Exportação PDF/Excel
 - Notificações por email
 - Planos/billing para sellers
 - Modo escuro
